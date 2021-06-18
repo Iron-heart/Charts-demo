@@ -11,6 +11,10 @@ import { DxChartModule } from 'devextreme-angular';
 import { NgxChartsComponent } from './pages/ngx-charts/ngx-charts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgxEchartsComponent } from './pages/ngx-echarts/ngx-echarts.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { NgApexchartsComponent } from './pages/ng-apexcharts/ng-apexcharts.component';
 
 
 @NgModule({
@@ -18,7 +22,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     AppComponent,
     NavbarComponent,
     DxPageComponent,
-    NgxChartsComponent
+    NgxChartsComponent,
+    NgxEchartsComponent,
+    NgApexchartsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +33,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     DxChartModule,
     DxRangeSelectorModule,
     BrowserAnimationsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    }),
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

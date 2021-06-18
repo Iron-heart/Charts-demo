@@ -1,0 +1,31 @@
+<div class="container">
+  <div echarts [options]="options" class="demo-chart" (chartInit)="onChartEvent($event, 'chartInit')"
+    (chartClick)="onChartEvent($event, 'chartClick')" (chartDblClick)="onChartEvent($event, 'chartDblClick')"
+    (chartMouseDown)="onChartEvent($event, 'chartMouseDown')" (chartMouseUp)="onChartEvent($event, 'chartMouseUp')"
+    (chartMouseOver)="onChartEvent($event, 'chartMouseOver')" (chartMouseOut)="onChartEvent($event, 'chartMouseOut')"
+    (chartGlobalOut)="onChartEvent($event, 'chartGlobalOut')"
+    (chartContextMenu)="onChartEvent($event, 'chartContextMenu')"
+    (chartDataZoom)="onChartEvent($event, 'chartDataZoom')">
+  </div>
+  <p>It can run fluently on PC and mobile devices. It is compatible with most modern Web Browsers, e.g., IE8/9/10/11,
+    Chrome, Firefox, Safari and so on. ECharts depends on ZRender, a graphic rendering engine, to create intuitive,
+    interactive, and highly-customizable charts.</p>
+  <h2>Chart Types: </h2>
+  <p>Line series, bar series, scatter series, pie charts, candle-stick series, boxplot series for statistics, map
+    series, heatmap series, line series for directional information, graph series for relationships, treemap series,
+    sunburst series, parallel series for multi-dimensional data, funnel series, gauge series
+    Besides the built-in chart types, ECharts also provide the custom series for users to create a specific chart type.
+  </p>
+  <h2>Customization: </h2>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Loading Handling</li>
+    <li class="list-group-item">Event Handling</li>
+    <li class="list-group-item">Real-time data update</li>
+    <li class="list-group-item">Initial Options</li>
+    <li class="list-group-item">Auto Resize</li>
+    <li class="list-group-item">Theming</li>
+    <li class="list-group-item">Connect Charts</li>
+    <li class="list-group-item">Draggable Charts</li>
+    <li class="list-group-item">3D Charts</li>
+  </ul>
+</div>
