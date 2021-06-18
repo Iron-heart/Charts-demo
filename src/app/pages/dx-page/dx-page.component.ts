@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DxChartComponent } from 'devextreme-angular';
+import { DataService } from 'src/app/sevices/data.service';
+import { StockPrice } from 'src/app/StockPrice';
+
 
 @Component({
   selector: 'app-dx-page',
@@ -6,39 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dx-page.component.css']
 })
 export class DxPageComponent implements OnInit {
-  dataSource = [
-    { complaint: "Cold pizza", count: 780 },
-    { complaint: "Not enough cheese", count: 120 },
-    { complaint: "Underbaked or Overbaked", count: 52 },
-    { complaint: "Delayed delivery", count: 1123 },
-    { complaint: "Damaged pizza", count: 321 },
-    { complaint: "Incorrect billing", count: 89 },
-    { complaint: "Wrong size delivered", count: 222 }
-  ];
+  @ViewChild(DxChartComponent, { static: false }) chart!: DxChartComponent;
 
-  customizeTooltip = (info: any) => {
-    return {
-      html: "<div><div class='tooltip-header'>" +
-        info.argumentText + "</div>" +
-        "<div class='tooltip-body'><div class='series-name'>" +
-        "<span class='top-series-name'>" + info.points[0].seriesName + "</span>" +
-        ": </div><div class='value-text'>" +
-        "<span class='top-series-value'>" + info.points[0].valueText + "</span>" +
-        "</div><div class='series-name'>" +
-        "<span class='bottom-series-name'>" + info.points[1].seriesName + "</span>" +
-        ": </div><div class='value-text'>" +
-        "<span class='bottom-series-value'>" + info.points[1].valueText + "</span>" +
-        "% </div></div></div>"
-    };
-  }
+  stockPrices!: StockPrice[];
+  visualRange: any = {};
 
-  customizeLabelText = (info: any) => {
-    return info.valueText + "%";
-  }
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataService.getData().subscribe((res) => {
+      this.stockPrices = res
+      console.log(res)
+    })
   }
 
 }
