@@ -21,7 +21,6 @@ export class DxPageComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getData().subscribe((res) => {
       this.stockPrices = res
-      console.log(res)
     })
   }
 

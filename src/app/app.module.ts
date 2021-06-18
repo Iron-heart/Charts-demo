@@ -8,20 +8,26 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DxPageComponent } from './pages/dx-page/dx-page.component'
 import { DxChartModule } from 'devextreme-angular';
+import { NgxChartsComponent } from './pages/ngx-charts/ngx-charts.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    DxPageComponent
+    DxPageComponent,
+    NgxChartsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     DxChartModule,
-    DxRangeSelectorModule
+    DxRangeSelectorModule,
+    BrowserAnimationsModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
