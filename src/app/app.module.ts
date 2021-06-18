@@ -13,13 +13,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DxRangeSelectorModule } from 'devextreme-angular';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { NgxEchartsComponent } from './pages/ngx-echarts/ngx-echarts.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { NgApexchartsComponent } from './pages/ng-apexcharts/ng-apexcharts.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     DxPageComponent,
-    NgxChartsComponent
+    NgxChartsComponent,
+    NgxEchartsComponent,
+    NgApexchartsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     DxChartModule,
     DxRangeSelectorModule,
     BrowserAnimationsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    }),
+    NgApexchartsModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
