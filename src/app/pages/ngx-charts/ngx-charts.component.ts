@@ -39,7 +39,6 @@ export class NgxChartsComponent implements OnInit {
           "value": data.Open
         }
       });
-      console.log(this.results);
     })
   }
 }
