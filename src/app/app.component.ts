@@ -6,15 +6,9 @@ import { DataService } from './sevices/data.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  constructor(private dataService: DataService) {
-  }
+export class AppComponent {
+  constructor() {}
 
-  ngOnInit() {
-    this.dataService.getData().subscribe((response) => {
-      console.log(response)
-    })
-  }
   
   title = 'charts-demo';
 }
