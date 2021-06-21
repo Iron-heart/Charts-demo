@@ -17,7 +17,12 @@ import { NgxEchartsComponent } from './pages/ngx-echarts/ngx-echarts.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { NgApexchartsComponent } from './pages/ng-apexcharts/ng-apexcharts.component';
-
+import { AccumulationChartAllModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts'
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SynchFusionComponent } from './pages/synch-fusion/synch-fusion.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,8 @@ import { NgApexchartsComponent } from './pages/ng-apexcharts/ng-apexcharts.compo
     DxPageComponent,
     NgxChartsComponent,
     NgxEchartsComponent,
-    NgApexchartsComponent
+    NgApexchartsComponent,
+    SynchFusionComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,14 @@ import { NgApexchartsComponent } from './pages/ng-apexcharts/ng-apexcharts.compo
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),
-    NgApexchartsModule
+    NgApexchartsModule,
+    ChartAllModule,
+    AccumulationChartAllModule,
+    RangeNavigatorAllModule,
+    ButtonModule,
+    NumericTextBoxModule, 
+    DatePickerModule, 
+    DropDownListAllModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
