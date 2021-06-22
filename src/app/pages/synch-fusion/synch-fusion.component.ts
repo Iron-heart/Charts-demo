@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IAxisLabelRenderEventArgs, IPointRenderEventArgs, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { IAxisLabelRenderEventArgs, IPointRenderEventArgs, ILoadedEventArgs, ChartTheme, ChartComponent } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
-import { ChartComponent } from 'ng-apexcharts';
 import { DataService } from 'src/app/sevices/data.service';
 
 let pointColors: string[] = [];
@@ -13,8 +12,8 @@ let pointColors: string[] = [];
 export class SynchFusionComponent implements OnInit {
 
   @ViewChild('chartcontainer')
-    public chart: ChartComponent = new ChartComponent();
-    public data1: Object[] = [];
+    public chart!: ChartComponent;
+    public data1!: Object[];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
